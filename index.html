@@ -12,8 +12,8 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Familie Zeltner-König</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#" style="margin-left: 10px;">Familie Zeltner-König</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -21,15 +21,31 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Übersicht</a>
           </li>
-          <!-- Add links for family members' personal sites -->
-          <li class="nav-item">
-            <a class="nav-link" href="#person1">Person 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#person2">Person 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#person3">Person 3</a>
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Familienmitglieder
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="/Christoph">Christoph</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/Cornelia">Cornelia</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/Basil">Basil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/Manuel">Manuel</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/Tobias">Tobias</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/Silas">Silas</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -48,13 +64,13 @@
           <div class="card mb-3" id="person1">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="src\img\IMG_2290.JPG" alt="Person 1" class="img-fluid">
+                <img src="src\img\1612026746757.jpeg" alt="Person 1" class="img-fluid">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">Christoph Zeltner</h5>
                   <p class="card-text">Jahrgang: 25<br>Hobbies: Sports, Arts<br>Profession: Professional</p>
-                  <a href="person1_social_media_link" class="btn btn-primary">Visit Profile</a>
+                  <a href="https://www.linkedin.com/in/dr-christoph-zeltner-533660140/" class="btn btn-primary">Visit Profile</a>
                 </div>
               </div>
             </div>
@@ -63,7 +79,7 @@
           <div class="card mb-3" id="person1">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="src\img\IMG_0475.jpg" alt="Person 1" class="img-fluid">
+                <img src="src\img\1ad0859b-2cdc-46ea-862a-633d81d1d679.jpg" alt="Person 1" class="img-fluid">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -78,13 +94,13 @@
           <div class="card mb-3" id="person1">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="src\img\IMG_0475.jpg" alt="Person 1" class="img-fluid">
+                <img src="src\img\THI_8024.jpg" alt="Person 1" class="img-fluid">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">Basil Elia Zeltner</h5>
                   <p class="card-text">Jahrgang: 25<br>Hobbies: Sports, Arts<br>Profession: Professional</p>
-                  <a href="person3_social_media_link" class="btn btn-primary">Visit Profile</a>
+                  <a href="https://www.instagram.com/b4s1l/" class="btn btn-primary">Visit Profile</a>
                 </div>
               </div>
             </div>
@@ -98,7 +114,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Manuel Rio Zeltner</h5>
                   <p class="card-text">Jahrgang: 25<br>Hobbies: Sports, Arts<br>Profession: Professional</p>
-                  <a href="src\img\glpSO_NRW23_Manuel-Zeltner.jpg" class="btn btn-primary">Visit Profile</a>
+                  <a href="https://www.instagram.com/riozma/" class="btn btn-primary">Visit Profile</a>
                 </div>
               </div>
             </div>
@@ -106,7 +122,7 @@
           <div class="card mb-3" id="person1">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="src\img\IMG_0475.jpg" alt="Person 1" class="img-fluid">
+                <img src="src\img\CKZ_2657 Tobias.JPG" alt="Person 1" class="img-fluid">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -126,7 +142,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Silas Flurin Zeltner</h5>
                   <p class="card-text">Jahrgang: 25<br>Hobbies: Sports, Arts<br>Profession: Professional</p>
-                  <a href="person1_social_media_link" class="btn btn-primary">Visit Profile</a>
+                  <a href="https://www.instagram.com/six.las/" class="btn btn-primary">Visit Profile</a>
                 </div>
               </div>
             </div>
@@ -136,8 +152,8 @@
     </div>
 
     <!-- Add Bootstrap JS and jQuery scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   </body>
 
