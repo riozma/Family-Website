@@ -2,19 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://zeltner-koenig.ch/Manuel.html?category=politics</loc>
-        <priority>1.2</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://zeltner-koenig.ch/Manuel.html?category=allgemeines</loc>
-        <priority>1.0</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://zeltner-koenig.ch/Manuel.html?category=kunst</loc>
-        <priority>1.0</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://zeltner-koenig.ch/</loc>
-        <priority>0.8</priority>
+        <priority>0.4</priority>
     </url>
     <!-- Weitere URLs hier hinzufügen -->
 </urlset>
+
