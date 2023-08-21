@@ -40,3 +40,12 @@ $(document).ready(function () {
     $(this).find(".collapse-content").toggleClass("show");
   });
 });
+
+// füge passende Bilder zu karte hinzu und eventlistener, welcher dialogfenster mit besserer Qualität ladet
+let artCards = document.querySelectorAll(".artCard")
+artCards.forEach((artCard) =>{
+  console.log(artCard.id)
+  artCard.querySelector("img").src = 'src/img/artManuel/lowRes/' + artCard.id
+  artCard.addEventListener
+}
+)
