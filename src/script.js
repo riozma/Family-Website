@@ -9,14 +9,34 @@ navLinks.forEach((navLink) => {
     navLink.classList.add("active");
     let id = navLink.getAttribute("data-category");
     if (id != "family") {
+      let div = document.querySelector(`#${id}`);
+      // add id to the url without reloading the page
+      window.history.pushState("", "", `?category=${id}`);
+      let divs = document.querySelectorAll(".category");
+      divs.forEach((div) => {
+        div.classList.add("d-none");
+      });
+      div.classList.remove("d-none");
+    }
+  });
+});
+
+// macht das richtige div sichtbar wenn seite geladen wird
+document.addEventListener("DOMContentLoaded", function () {
+  let url = window.location.href;
+  let id = url.split("=")[1];
+  if (id != undefined) {
     let div = document.querySelector(`#${id}`);
-    // add id to the url without reloading the page
-    window.history.pushState("", "", `?category=${id}`);
     let divs = document.querySelectorAll(".category");
     divs.forEach((div) => {
       div.classList.add("d-none");
     });
     div.classList.remove("d-none");
-}
+  }
+});
+
+$(document).ready(function () {
+  $(".collapse-card").on("click", function () {
+    $(this).find(".collapse-content").toggleClass("show");
   });
 });
