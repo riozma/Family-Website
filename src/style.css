@@ -1,20 +1,26 @@
 .profile-image {
-    width: 100%; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5%;
-    /* Additional styling properties if needed */
+  width: 100%;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 5%;
+  /* Additional styling properties if needed */
 }
 
 .social-media-icon {
-    width: 40px; /* Adjust the width as needed */
-    height: 40px; /* Set a fixed height to maintain consistent size */
-    /* Additional styling properties if needed */
+  width: 40px;
+  /* Adjust the width as needed */
+  height: 40px;
+  /* Set a fixed height to maintain consistent size */
+  /* Additional styling properties if needed */
 }
 
 .organization-logo {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    /* Additional styling properties if needed */
+  width: 100px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  /* Additional styling properties if needed */
 }
 
 /* Add this CSS code to your stylesheet or within a <style> tag in your HTML */
@@ -23,13 +29,16 @@
   width: 80%;
 }
 
-.social-media-table th, .social-media-table td {
-  padding: 10px; /* Adjust the padding value as needed */
+.social-media-table th,
+.social-media-table td {
+  padding: 10px;
+  /* Adjust the padding value as needed */
   text-align: center;
 }
 
 .social-media-icon {
-  margin: 5px; /* Add margin around the icons */
+  margin: 5px;
+  /* Add margin around the icons */
 }
 
 /* Add this CSS code to your stylesheet or within a <style> tag in your HTML */
@@ -38,51 +47,69 @@
   width: 100%;
 }
 
-.organization-table th, .organization-table td {
-  padding: 10px; /* Adjust the padding value as needed */
+.organization-table th,
+.organization-table td {
+  padding: 10px;
+  /* Adjust the padding value as needed */
   text-align: center;
 }
 
 .organization-logo {
-  margin: 10px; /* Add margin around the logos */
+  margin: 10px;
+  /* Add margin around the logos */
 }
 
 main {
   min-width: 200px;
-  margin: 0 auto; /* Center the content horizontally */
+  margin: 0 auto;
+  /* Center the content horizontally */
 }
 
 @media (max-width: 767px) {
+
   /* For smartphones and smaller screens */
   main {
-    max-width: 95%; /* Adjust this value as needed */
+    max-width: 95%;
+    /* Adjust this value as needed */
   }
 }
 
 @media (min-width: 768px) {
+
   /* For larger screens */
   main {
-    max-width: 50%; /* Adjust this value as needed */
+    max-width: 50%;
+    /* Adjust this value as needed */
   }
 }
 
 .collapse-card {
-      cursor: pointer;
-    }
-    .collapse-content {
-      display: none;
-    }
-    .show {
-      display: block;
-    }
-    .collapse-arrow::before {
-      content: '\25B8'; /* Right-pointing triangle (▸) */
-      display: inline-block;
-      transform: rotate(90deg);
-      margin-right: 5px;
-      transition: transform 0.3s;
-    }
-    .collapse-trigger:focus .collapse-arrow::before,
-    .collapse-trigger:hover .collapse-arrow::before {
-      transform: rotate(0deg);
-    }
+  cursor: pointer;
+}
+
+.collapse-content {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.collapse-arrow::before {
+  content: '\25B8';
+  /* Right-pointing triangle (▸) */
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-right: 5px;
+  transition: transform 0.3s;
+}
+
+.collapse-trigger:focus .collapse-arrow::before,
+.collapse-trigger:hover .collapse-arrow::before {
+  transform: rotate(0deg);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

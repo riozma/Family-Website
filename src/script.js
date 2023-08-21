@@ -45,7 +45,18 @@ $(document).ready(function () {
 let artCards = document.querySelectorAll(".artCard")
 artCards.forEach((artCard) =>{
   console.log(artCard.id)
-  artCard.querySelector("img").src = 'src/img/artManuel/lowRes/' + artCard.id
-  artCard.addEventListener
+  artCard.querySelector("img").src = 'src/img/artManuel/lowRes/' + artCard.id + '-min.jpg'
+  artCard.addEventListener("click", function(){
+    let dialog = document.getElementById("artwork-modal")
+    console.log("test")
+    dialog.querySelector("img").src = 'src/img/artManuel/highRes/' + artCard.id + '.jpg'
+    dialog.showModal()
+  })
 }
 )
+
+//close dialog
+function closeModal(){
+  let dialog = document.getElementById("artwork-modal")
+  dialog.close()
+}
