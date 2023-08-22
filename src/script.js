@@ -42,18 +42,31 @@ $(document).ready(function () {
 });
 
 // füge passende Bilder zu karte hinzu und eventlistener, welcher dialogfenster mit besserer Qualität ladet
-let artCards = document.querySelectorAll(".artCard")
-artCards.forEach((artCard) =>{
-  console.log(artCard.id)
-  artCard.querySelector("img").src = 'src/img/artManuel/lowRes/' + artCard.id + '-min.jpg'
-  artCard.addEventListener("click", function(){
-    let dialog = document.getElementById("artwork-modal")
-    console.log("test")
-    dialog.querySelector("img").src = 'src/img/artManuel/highRes/' + artCard.id + '.jpg'
-    dialog.showModal()
-  })
-}
-)
+let artCards = document.querySelectorAll(".artCard");
+
+
+
+artCards.forEach((artCard) => {
+  console.log(artCard.id);
+  artCard.querySelector("img").src =
+    "src/img/artManuel/lowRes/" + artCard.id + "-min.jpg";
+  artCard.addEventListener("click", function () {
+    let dialog = document.getElementById("artwork-modal");
+    console.log("test");
+    dialog.querySelector("img").src =
+      "src/img/artManuel/highRes/" + artCard.id + ".jpg";
+
+    // Calculate the width of the loaded image
+    let loadedImage = new Image();
+    loadedImage.src = dialog.querySelector("img").src;
+    loadedImage.onload = function () {
+      dialog.classList.add("show"); // Add the "show" class to trigger the animation
+      dialog.showModal();
+    };
+  });
+});
+
+
 
 //close dialog
 function closeModal(){
