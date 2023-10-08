@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="src\style.css">
   </head>
 
-  <body>
+  <body style="background-color: #dbedd8;">
     <header>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light navbar-bg">
@@ -39,7 +39,7 @@
           <ul class="navbar-nav">
             <!-- Dropdown Menu -->
             <li class="nav-item">
-              <a class="nav-link" data-category="allgemeines">Allgemeines</a>
+              <a class="nav-link" data-category="allgemeines" style="margin-left: 10px;">Allgemeines</a>
             </li>
             <li class="nav-item dropdown d-none">
               <a class="nav-link dropdown-toggle" data-category="family" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,15 +68,46 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" data-category="politics" style="z-index: 1;">Politik</a>
+              <a class="nav-link" data-category="politics" style="z-index: 1;margin-left: 10px;">Politik</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-category="kunst" style="z-index: 1;">Kunst</a>
+              <a class="nav-link" data-category="kunst" style="z-index: 1;margin-left: 10px;">Kunst</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-image: linear-gradient(to bottom, #ffffff, #559723);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #374434;
+      }
+
+      /* Customize the horizontal scrollbar */
+      ::-webkit-scrollbar-horizontal {
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal {
+        background-color: #888;
+      }
+
+      /* Customize the scrollbar for mobile devices */
+      @media (max-width: 767px) {
+        body {
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
 
     <main>
       <!-- ALLGEMEINES -->
@@ -386,13 +417,24 @@
 
       <!-- Art Section -->
       <div id="kunst" class="d-none category">
-        <h2 class="section-title">riozmart</h2>
-        <p class="section-description">chli mölele</p>
+        <h2 class="section-title" style="z-index: 0;">riozmart</h2>
+        <p class="section-description" style="z-index: 0;">chli mölele</p>
 
         <!-- Preview Cards for Artwork -->
-        <div class="row artwork-preview">
+        <div class="row artwork-preview" style="z-index: 0;">
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20210510_191503__01">
+            <div class="card artCard" data-toggle="modal" id="PXL_20231008_154849501" title="" year="2023" size="60x80" medium="Acrylic on canvas">
+              <img alt="Artwork by riozma" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">""</h5>
+                <p class="card-text">2023</p>
+                <p class="card-text">60x80</p>
+                <p class="card-text">Acrylic on canvas</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card artCard" data-toggle="modal" id="IMG_20210510_191503__01" title="dr Afang" year="2021" size="40x50" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"dr Afang"</h5>
@@ -403,7 +445,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092850">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092850" title="Ängu" year="2019" size="60x80" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Ängu"</h5>
@@ -414,7 +456,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093259">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093259" title="Gwitter" year="2021" size="40x50" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Gwitter"</h5>
@@ -425,7 +467,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20210829_135425__01">
+            <div class="card artCard" data-toggle="modal" id="IMG_20210829_135425__01" title="fräch" year="2021" size="85x95" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"fräch"</h5>
@@ -436,7 +478,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20210905_191900">
+            <div class="card artCard" data-toggle="modal" id="IMG_20210905_191900" title="wave" year="2020" size="95x85" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"wave"</h5>
@@ -447,7 +489,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20220723_152954029">
+            <div class="card artCard" data-toggle="modal" id="PXL_20220723_152954029" title="Stadtplan" year="2022" size="120x90" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Stadtplan"</h5>
@@ -458,7 +500,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20220724_193030410">
+            <div class="card artCard" data-toggle="modal" id="PXL_20220724_193030410" title="Weize" year="2022" size="120x90" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Weize"</h5>
@@ -469,7 +511,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20220724_193303289">
+            <div class="card artCard" data-toggle="modal" id="PXL_20220724_193303289" title="" year="2022" size="120x90" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">""</h5>
@@ -480,7 +522,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20230822_191239286">
+            <div class="card artCard" data-toggle="modal" id="PXL_20230822_191239286" title="Adler" year="2022" size="100x80" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Adler"</h5>
@@ -491,7 +533,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20220724_194015431">
+            <div class="card artCard" data-toggle="modal" id="PXL_20220724_194015431" title="Elefant" year="2022" size="40x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Elefant"</h5>
@@ -502,7 +544,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20230822_190340103">
+            <div class="card artCard" data-toggle="modal" id="PXL_20230822_190340103" title="Blätterdach" year="2022" size="100x80" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Blätterdach"</h5>
@@ -513,7 +555,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="PXL_20230822_190948021~2">
+            <div class="card artCard" data-toggle="modal" id="PXL_20230822_190948021~2" title="Wasserschloss" year="2023" size="100x80" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Wasserschloss"</h5>
@@ -524,7 +566,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093129">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093129" title="Todesboum" year="2019" size="30x40" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Todesboum"</h5>
@@ -535,7 +577,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211106_150344">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211106_150344" title="Monster" year="2021" size="60x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Monster"</h5>
@@ -546,7 +588,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211128_123601_571">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211128_123601_571" title="strömend" year="2021" size="60x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"strömend"</h5>
@@ -557,7 +599,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20210926_134639">
+            <div class="card artCard" data-toggle="modal" id="IMG_20210926_134639" title="begrenzti Freiheit" year="2020" size="95x85" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"begrenzti Freiheit"</h5>
@@ -568,7 +610,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211010_102546">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211010_102546" title="Ragete" year="2020" size="40x40" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Ragete"</h5>
@@ -579,7 +621,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211203_182007_040">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211203_182007_040" title="Ärdbeeri" year="2021" size="60x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Ärdbeeri"</h5>
@@ -590,7 +632,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092913">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092913" title="überhitzt" year="2019" size="40x40" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"überhitzt"</h5>
@@ -601,18 +643,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092850">
-              <img alt="Artwork by riozma" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">"Ängu"</h5>
-                <p class="card-text">2019</p>
-                <p class="card-text">60x80</p>
-                <p class="card-text">Acrylic on canvas</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092932">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_092932" title="chrank" year="2019" size="30x40" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"chrank"</h5>
@@ -623,7 +654,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093215">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093215" title="Auge" year="2020" size="120x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Auge"</h5>
@@ -634,7 +665,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093237">
+            <div class="card artCard" data-toggle="modal" id="IMG_20211225_093237" title="Friedhof" year="2020" size="120x60" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Friedhof"</h5>
@@ -645,7 +676,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card artCard" data-toggle="modal" id="IMG_20210510_191419">
+            <div class="card artCard" data-toggle="modal" id="IMG_20210510_191419" title="Alien" year="2020" size="15x15" medium="Acrylic on canvas">
               <img alt="Artwork by riozma" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">"Alien"</h5>
@@ -657,15 +688,24 @@
           </div>
         </div>
 
+        <!-- black box over everything -->
+        <div id="blackBox" style="z-index: 1; display: none; background-color: #3a4a2d7b; position: fixed; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
         <!-- Artwork Modals -->
-        <dialog id="artwork-modal" class="modal-dialog" style="max-height: 90%; justify-self: center; max-width: 90%; border-radius: 20px; border-color: white; margin-top: 20px;">
+        <dialog id="artwork-modal"  style="z-index: 2; justify-self: center; max-width: 90%; border-radius: 20px; ">
           <div class="modal-content">
             <div class="modal-body" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
               <img src="" class="img-fluid" style="max-height: 70vh; border-radius: 10px;">
               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
-                
-                <!-- Font Awesome close icon -->
               </button>
+              <!-- Download btn, name, year, size and type placeholder -->
+              <div class="card-body" style="line-height: 0.4;" id="artwork-info">
+                <h5 class="card-title" id="artwork-title" style="margin: 15px;">Titel</h5>
+                <p class="card-text" id="artwork-year">Jahr</p>
+                <p class="card-text" id="artwork-size">Grösse</p>
+                <p class="card-text" id="artwork-medium">Medium</p>
+                <a href="" download="" class="btn btn-secondary" id="artwork-download">herunterladen</a>
+              </div>
             </div>
           </div>
         </dialog>

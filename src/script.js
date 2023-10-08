@@ -52,16 +52,34 @@ artCards.forEach((artCard) => {
     "src/img/artManuel/lowRes/" + artCard.id + "-min.jpg";
   artCard.addEventListener("click", function () {
     let dialog = document.getElementById("artwork-modal");
-    console.log("test");
-    dialog.querySelector("img").src =
-      "src/img/artManuel/highRes/" + artCard.id + ".jpg";
+
+    // get the year, title, size and medium of the artwork
+    let year = artCard.getAttribute("year");
+    let title = artCard.getAttribute("title");
+    let size = artCard.getAttribute("size");
+    let medium = artCard.getAttribute("medium");
+
+    // set the text of the dialog
+    document.getElementById("artwork-title").innerHTML = '"' + title + '"';
+    document.getElementById("artwork-year").innerHTML = year;
+    document.getElementById("artwork-size").innerHTML = size;
+    document.getElementById("artwork-medium").innerHTML = medium;
+
+    console.log(year);
+    var highResPath = "src/img/artManuel/highRes/" + artCard.id + ".jpg";
+    dialog.querySelector("img").src = highResPath;
+
+    // add download
+    document.getElementById("artwork-download").href = highResPath;
+    document.getElementById("artwork-download").download = artCard.id + ".jpg";
 
     // Calculate the width of the loaded image
     let loadedImage = new Image();
     loadedImage.src = dialog.querySelector("img").src;
     loadedImage.onload = function () {
-      dialog.classList.add("show"); // Add the "show" class to trigger the animation
       dialog.showModal();
+      // show remove display none from blackbox
+      document.getElementById("blackBox").style.display = "block";
     };
   });
 });
@@ -70,6 +88,7 @@ artCards.forEach((artCard) => {
 
 //close dialog
 function closeModal(){
+  document.getElementById("blackBox").style.display = "none";
   let dialog = document.getElementById("artwork-modal")
   dialog.close()
 }
