@@ -12,6 +12,15 @@
         height: 200px;
         object-fit: cover;
       }
+
+      .header-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .header-row {
+        margin-bottom: 20px;
+      }
     </style>
   </head>
 
@@ -19,7 +28,7 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Fotografen Portfolio</a>
+      <a class="navbar-brand" href="#">Tobias Zeltner</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +38,7 @@
             <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">Über mich</a>
+            <a class="nav-link" href="Tobias-About-Me.html">Über mich</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Kontakt</a>
@@ -38,28 +47,51 @@
       </div>
     </nav>
 
+    <!-- Header Images -->
+    <div class="container-fluid header-row">
+      <div class="row">
+        <div class="col-md-4 p-0">
+          <img src="src\img\imgTobias\TAZ09606-Enhanced-NR.jpg" class="header-img" alt="Header Image 1">
+        </div>
+        <div class="col-md-4 p-0">
+          <img src="src\img\imgTobias\TAZ09606-Enhanced-NR.jpg" class="header-img" alt="Header Image 2">
+        </div>
+        <div class="col-md-4 p-0">
+          <img src="src\img\imgTobias\TAZ09606-Enhanced-NR.jpg" class="header-img" alt="Header Image 3">
+        </div>
+      </div>
+    </div>
+
     <!-- Main Content -->
     <main class="container mt-5">
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="src\img\imgTobias\TAZ05563.JPG" class="card-img-top" alt="Sportfotos">
+            <img src="src/img/imgTobias/TAZ05282.jpg" class="card-img-top" alt="Sportfotos">
             <div class="card-body">
               <h5 class="card-title">Sportfotos</h5>
-              <a href="sportfotos.html" class="btn btn-primary">Mehr anzeigen</a>
+              <a href="Sportfotos.html" class="btn btn-danger">Mehr anzeigen</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="naturfoto.jpg" class="card-img-top" alt="Naturfotos">
+            <img src="src/img/imgTobias/TAZ00207-Enhanced-NR.jpg" class="card-img-top" alt="Naturfotos">
             <div class="card-body">
               <h5 class="card-title">Naturfotos</h5>
-              <a href="naturfotos.html" class="btn btn-primary">Mehr anzeigen</a>
+              <a href="naturfotos.html" class="btn btn-success">Mehr anzeigen</a>
             </div>
           </div>
         </div>
-        <!-- Weitere Karten für andere Kategorien -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="src/img/imgTobias/TAZ05563.JPG" class="card-img-top" alt="Naturfotos">
+            <div class="card-body">
+              <h5 class="card-title">Portraits</h5>
+              <a href="naturfotos.html" class="btn btn-secondary">Mehr anzeigen</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -70,7 +102,7 @@
           <p>Kontakt:
             <a href="mailto:zeltnertobias@gmail.com">zeltnertobias@gmail.com</a>
           </p>
-          <p>Telefon: +41 123 456 789</p>
+          <p>Instagram: @zeltnersports</p>
         </div>
       </div>
     </footer>
