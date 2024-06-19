@@ -4,13 +4,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotografen Portfolio</title>
+    <title>Sportfotos</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .card-img-top {
+      .gallery-img {
         height: 200px;
         object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .instagram-feed {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .instagram-post {
+        width: 100%;
+        max-width: 200px;
       }
     </style>
   </head>
@@ -26,10 +39,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="Tobias.html">Startseite</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Tobias-About-Me.html">Über mich</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sportfotos.html">Sportfotos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Kontakt</a>
@@ -40,17 +56,65 @@
 
     <!-- Main Content -->
     <main class="container mt-5">
+      <h1 class="text-center mb-4">Sportfotos</h1>
+
+
+      <!-- Gallery Section -->
+      <div class="row" id="gallery"></div>
+
+      <!-- Instagram Feed -->
+      <div class="mt-5">
+        <h2 class="text-center">Instagram Feed</h2>
+        <div id="instafeed" class="instagram-feed"></div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
-
+      <div class="container p-4">
+        <div class="text-center p-3">
+          <p>Kontakt:
+            <a href="mailto:zeltnertobias@gmail.com">zeltnertobias@gmail.com</a>
+          </p>
+          <p>Instagram:
+            <a href="https://www.instagram.com/zeltnersports" target="_blank">@zeltnersports</a>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle file uploads and display -->
+    <script>
+      function uploadPhotos() {
+        const gallery = document.getElementById('gallery');
+        const files = document
+          .getElementById('uploadInput')
+          .files;
+
+        for (const file of files) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
+            col.innerHTML = `<img src="${e.target.result}" class="gallery-img img-fluid" alt="Sportfoto">`;
+            gallery.appendChild(col);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+
+    <!-- Instagram Feed Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/dist/instafeed.min.js"></script>
+    <script>
+      const feed = new Instafeed({accessToken: 'zeltnersports', target: 'instafeed', template: '<a href="{{link}}" target="_blank"><img src="{{image}}" class="instagram-post" /></a>'});
+      feed.run();
+    </script>
   </body>
 
 </html>
