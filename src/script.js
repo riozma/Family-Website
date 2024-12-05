@@ -50,6 +50,48 @@ artCards.forEach((artCard) => {
   console.log(artCard.id);
   artCard.querySelector("img").src =
     "src/img/artManuel/lowRes/" + artCard.id + "-min.jpg";
+
+
+  // get the year, title, size and medium of the artwork
+  let year = artCard.getAttribute("year");
+  let title = artCard.getAttribute("title");
+  let size = artCard.getAttribute("size");
+  let medium = artCard.getAttribute("medium");
+  let availability = artCard.getAttribute("available"); // boolean
+
+  // set the text of the dialog
+  document.getElementById("artwork-title").innerHTML = '"' + title + '"';
+  document.getElementById("artwork-year").innerHTML = year;
+  document.getElementById("artwork-size").innerHTML = size;
+  document.getElementById("artwork-medium").innerHTML = medium;
+
+  // get the div with class card-body in the corresponding card
+  let cardBody = artCard.querySelector(".card-body");
+
+  let htmlCard = "";
+
+  // create the html
+  if (availability) {
+    htmlCard += `
+         <h5 class="card-title"> "${title}"* </h5>
+         <p class="card-text"> ${year} </p>
+         <p class="card-text"> ${size} </p>
+         <p class="card-text"> ${medium} </p>
+       `
+  } else {
+    htmlCard += `
+         <h5 class="card-title"> "${title}" </h5>
+         <p class="card-text"> ${year} </p>
+         <p class="card-text"> ${size} </p>
+         <p class="card-text"> ${medium} </p>
+       `
+  }
+
+  console.log(htmlCard);
+
+  // set the innerHTML of the dialog
+  cardBody.innerHTML = htmlCard;
+
   artCard.addEventListener("click", function () {
     let dialog = document.getElementById("artwork-modal");
 
@@ -58,6 +100,7 @@ artCards.forEach((artCard) => {
     let title = artCard.getAttribute("title");
     let size = artCard.getAttribute("size");
     let medium = artCard.getAttribute("medium");
+    let availability = artCard.getAttribute("available"); // boolean
 
     // set the text of the dialog
     document.getElementById("artwork-title").innerHTML = '"' + title + '"';
@@ -84,11 +127,111 @@ artCards.forEach((artCard) => {
   });
 });
 
+function sortArtworksByYear() {
+  // get the artworks.json file
+  fetch("src/artworks.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // sort the artworks by year
+      data.sort((a, b) => {
+        return b.year - a.year;
+      });
 
+      // get the container of the artworks
+      let container = document.getElementById("artwork-preview");
+      if (container) {
+        container.innerHTML = ""; // clear the container
+      } else {
+        console.error("Container with id 'artwork-preview' not found.");
+      }
+
+      // create the html for the artworks
+      data.forEach((artwork) => {
+        let html = `
+        <div class="col-md-4 col-sm-6 col-12" style="margin-bottom: 20px;">
+          <div class="card artCard" id="${artwork.id}" year="${artwork.year}" title="${artwork.title}" size="${artwork.size}" medium="${artwork.medium}" available="${artwork.available}">
+            <img class="card-img-top" src="src/img/artManuel/lowRes/${artwork.id}-min.jpg" alt="${artwork.title}">
+            <div class="card-body">
+              <h5 class="card-title">"${artwork.title}"</h5>
+              <p class="card-text">${artwork.year}</p>
+              <p class="card-text">${artwork.size}</p>
+              <p class="card-text">${artwork.medium}</p>
+            </div>
+          </div>
+        </div>
+        `;
+
+        container.innerHTML += html;
+      })
+
+      // add event listener to the new cards
+      let artCards = document.querySelectorAll(".artCard");
+
+      artCards.forEach((artCard) => {
+        artCard.addEventListener("click", function () {
+          let dialog = document.getElementById("artwork-modal");
+
+          // get the year, title, size and medium of the artwork
+          let year = artCard.getAttribute("year");
+          let title = artCard.getAttribute("title");
+          let size = artCard.getAttribute("size");
+          let medium = artCard.getAttribute("medium");
+          let availability = artCard.getAttribute("available"); // boolean
+
+          // set the text of the dialog
+          document.getElementById("artwork-title").innerHTML = '"' + title + '"';
+          document.getElementById("artwork-year").innerHTML = year;
+          document.getElementById("artwork-size").innerHTML = size;
+          document.getElementById("artwork-medium").innerHTML = medium;
+
+          var highResPath = "src/img/artManuel/highRes/" + artCard.id + ".jpg";
+          dialog.querySelector("img").src = highResPath;
+
+          // add download
+          document.getElementById("artwork-download").href = highResPath;
+          document.getElementById("artwork-download").download = artCard.id + ".jpg";
+
+          // Calculate the width of the loaded image
+          let loadedImage = new Image();
+          loadedImage.src = dialog.querySelector("img").src;
+          loadedImage.onload = function () {
+            dialog.showModal();
+            // show remove display none from blackbox
+            document.getElementById("blackBox").style.display = "block";
+          };
+        });
+      }
+      );
+    });
+
+  // add event listener to the new cards
+  let artCards = document.querySelectorAll(".artCard");
+  artCards.forEach((artCard) => {
+    artCard.addEventListener("click", function () {
+      let dialog = document.getElementById("artwork-modal");
+
+      // get the year, title, size and medium of the artwork
+      let year = artCard.getAttribute("year");
+      let title = artCard.getAttribute("title");
+      let size = artCard.getAttribute("size");
+      let medium = artCard.getAttribute("medium");
+      let availability = artCard.getAttribute("available"); // boolean
+
+      // set the text of the dialog
+      document.getElementById("artwork-title").innerHTML = '"' + title + '"';
+      document.getElementById("artwork-year").innerHTML = year;
+      document.getElementById("artwork-size").innerHTML = size;
+      document.getElementById("artwork-medium").innerHTML = medium;
+
+      var highResPath = "src/img/artManuel/highRes/" + artCard.id + ".jpg";
+          dialog.querySelector("img").src;
+        });
+      });
+    }
 
 //close dialog
-function closeModal(){
-  document.getElementById("blackBox").style.display = "none";
-  let dialog = document.getElementById("artwork-modal")
-  dialog.close()
-}
+function closeModal() {
+        document.getElementById("blackBox").style.display = "none";
+        let dialog = document.getElementById("artwork-modal")
+        dialog.close()
+      }
